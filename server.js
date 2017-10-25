@@ -30,6 +30,6 @@ router.get("/", (req, res) => {
 app.use("/api", router);
 
 app.listen(port, function() {
-  console.log("api running on port ${port}");
+  console.log("api running on port " + port);
 });
   
