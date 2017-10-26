@@ -1,7 +1,9 @@
 "use strict"
 
+
 var express = require("express");
 var bodyParser = require("body-parser");
+var path = require("path");
 
 var app = express();
 var router = express.Router();
@@ -29,6 +31,8 @@ router.get("/", (req, res) => {
 
 app.use("/api", router);
 
+// react entry point
+app.use("/", express.static(path.resolve(__dirname, "./client/build/")));
 app.listen(port, function() {
   console.log("api running on port " + port);
 });
